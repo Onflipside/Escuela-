@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Escuela De Seguros | Licencias de Seguros en Español — Florida</title>
+<meta name="description" content="La primera escuela de seguros en español de Florida. Licencias 2-15, 2-40, 2-14 y Educación Continua — respaldada por The Insurance School, el proveedor educativo privado más antiguo y más grande de Florida.">
+<style>
+  :root{
+    --navy:#1F3B57; --orange:#E87722; --purple:#7B5EA7; --green:#3FA34D;
+    --ink:#2b2b2b; --gray:#8a8a8a; --light:#faf7f2; --white:#ffffff;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Segoe UI',Calibri,Arial,sans-serif; color:var(--ink); background:var(--white); line-height:1.6;}
+
+  /* ---------- NAV ---------- */
+  nav{position:sticky; top:0; z-index:50; background:var(--navy); color:#fff; box-shadow:0 2px 10px rgba(0,0,0,.25);}
+  .nav-inner{max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:14px 24px; flex-wrap:wrap; gap:10px;}
+  .logo{font-size:20px; font-weight:800; letter-spacing:.3px;}
+  .logo .star{color:var(--purple); margin-right:6px;}
+  .logo .accent{color:var(--orange);}
+  .nav-links{display:flex; gap:22px; align-items:center; flex-wrap:wrap;}
+  .nav-links a{color:#fff; text-decoration:none; font-size:15px; opacity:.92;}
+  .nav-links a:hover{color:var(--orange); opacity:1;}
+  .lang-toggle{border:2px solid var(--orange); border-radius:24px; overflow:hidden; display:flex; cursor:pointer;}
+  .lang-toggle span{padding:4px 14px; font-size:13px; font-weight:700;}
+  .lang-toggle .active{background:var(--orange); color:#fff;}
+  .lang-toggle .inactive{background:transparent; color:#fff; opacity:.7;}
+
+  /* ---------- HERO ---------- */
+  header{background:linear-gradient(135deg, var(--navy) 0%, #2c5378 60%, #35618c 100%); color:#fff; padding:84px 24px 90px; text-align:center; position:relative; overflow:hidden;}
+  header::after{content:"✻"; position:absolute; font-size:420px; color:rgba(123,94,167,.14); right:-70px; top:-60px; line-height:1;}
+  .hero-inner{max-width:860px; margin:0 auto; position:relative; z-index:2;}
+  .hero-kicker{display:inline-block; border:2px solid var(--orange); border-radius:28px; padding:7px 22px; font-size:14px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:26px; color:#fff;}
+  h1{font-size:46px; line-height:1.15; font-weight:800; margin-bottom:18px;}
+  h1 .hl{color:var(--orange);}
+  .hero-sub{font-size:19px; opacity:.93; max-width:640px; margin:0 auto 34px;}
+  .btn{display:inline-block; text-decoration:none; font-weight:800; border-radius:8px; padding:15px 34px; font-size:17px; transition:transform .15s ease, box-shadow .15s ease;}
+  .btn:hover{transform:translateY(-2px); box-shadow:0 6px 18px rgba(0,0,0,.25);}
+  .btn-orange{background:var(--orange); color:#fff;}
+  .btn-ghost{border:2px solid #fff; color:#fff; margin-left:14px;}
+  .hero-strip{margin-top:46px; display:flex; justify-content:center; gap:38px; flex-wrap:wrap; font-size:15px;}
+  .hero-strip div{display:flex; align-items:center; gap:8px;}
+  .hero-strip .chk{color:var(--green); font-weight:800; font-size:18px;}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:74px 24px;}
+  .wrap{max-width:1100px; margin:0 auto;}
+  .sec-kicker{color:var(--orange); font-weight:800; font-size:14px; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px;}
+  h2{font-size:32px; color:var(--navy); font-weight:800; margin-bottom:14px;}
+  .sec-lead{font-size:17px; color:#555; max-width:700px; margin-bottom:44px;}
+
+  /* Programs */
+  .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px;}
+  .card{background:var(--light); border-radius:14px; padding:30px 26px; border-top:6px solid var(--orange); box-shadow:0 2px 10px rgba(0,0,0,.06); display:flex; flex-direction:column;}
+  .card.alt1{border-top-color:var(--navy);}
+  .card.alt2{border-top-color:var(--purple);}
+  .card.alt3{border-top-color:var(--green);}
+  .card .code{font-size:13px; font-weight:800; letter-spacing:1.5px; color:var(--gray); text-transform:uppercase; margin-bottom:6px;}
+  .card h3{font-size:21px; color:var(--navy); margin-bottom:10px;}
+  .card p{font-size:15px; color:#555; flex:1;}
+  .card .card-cta{margin-top:18px; font-weight:800; color:var(--orange); text-decoration:none; font-size:15px;}
+  .card .card-cta:hover{text-decoration:underline;}
+
+  /* How it works */
+  .steps{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:28px; counter-reset:step;}
+  .step{text-align:center; padding:10px;}
+  .stepnum{width:52px; height:52px; border-radius:50%; background:var(--navy); color:#fff; font-weight:800; font-size:22px; display:flex; align-items:center; justify-content:center; margin:0 auto 16px;}
+  .step h4{color:var(--navy); font-size:18px; margin-bottom:8px;}
+  .step p{font-size:15px; color:#555;}
+
+  /* Why */
+  .why{background:var(--light);}
+  .why-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px;}
+  .why-item{display:flex; gap:14px; align-items:flex-start; background:#fff; border-radius:12px; padding:20px 22px; box-shadow:0 1px 6px rgba(0,0,0,.05);}
+  .why-item .chk{color:var(--green); font-weight:800; font-size:20px; line-height:1.4;}
+  .why-item b{color:var(--navy);}
+  .why-item p{font-size:15px; color:#555;}
+
+  /* Quote band */
+  .band{background:var(--navy); color:#fff; text-align:center; padding:62px 24px;}
+  .band .star{color:var(--purple); font-size:34px; display:block; margin-bottom:12px;}
+  .band blockquote{font-size:24px; font-weight:700; max-width:760px; margin:0 auto 10px; line-height:1.4;}
+  .band cite{font-style:normal; color:var(--orange); font-weight:700; font-size:15px;}
+
+  /* Formats */
+  table.formats{width:100%; border-collapse:collapse; box-shadow:0 2px 10px rgba(0,0,0,.06); border-radius:12px; overflow:hidden;}
+  .formats th{background:var(--navy); color:#fff; text-align:left; padding:14px 18px; font-size:15px;}
+  .formats td{padding:14px 18px; font-size:15px; border-bottom:1px solid #eee;}
+  .formats tr:nth-child(odd) td{background:var(--light);}
+  .formats td:first-child{font-weight:700; color:var(--navy);}
+
+  /* CTA */
+  .cta{background:linear-gradient(135deg, var(--orange) 0%, #f08a3e 100%); color:#fff; text-align:center;}
+  .cta h2{color:#fff;}
+  .cta p{font-size:17px; max-width:620px; margin:0 auto 30px; opacity:.95;}
+  .btn-navy{background:var(--navy); color:#fff;}
+
+  /* Footer */
+  footer{background:#152c42; color:#c9d4de; padding:46px 24px 30px; font-size:14px;}
+  .foot-grid{max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:30px; margin-bottom:30px;}
+  footer h5{color:#fff; font-size:15px; margin-bottom:12px;}
+  footer a{color:#c9d4de; text-decoration:none; display:block; margin-bottom:8px;}
+  footer a:hover{color:var(--orange);}
+  .foot-bottom{max-width:1100px; margin:0 auto; border-top:1px solid rgba(255,255,255,.15); padding-top:18px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:13px; color:#9fb0bf;}
+
+  @media (max-width:640px){
+    h1{font-size:32px;}
+    .btn-ghost{margin-left:0; margin-top:12px;}
+    header{padding:60px 20px 66px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo"><span class="star">✻</span>La Escuela <span class="accent">De Seguros</span></div>
+    <div class="nav-links">
+      <a href="#programas" data-i="nav1">Programas</a>
+      <a href="#como" data-i="nav2">Cómo Funciona</a>
+      <a href="#porque" data-i="nav3">Por Qué Nosotros</a>
+      <a href="#formatos" data-i="nav4">Formatos</a>
+      <a href="#inscribete" data-i="nav5">Inscríbete</a>
+      <div class="lang-toggle" onclick="toggleLang()" title="Español / English">
+        <span id="es-btn" class="active">ES</span><span id="en-btn" class="inactive">EN</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="hero-inner">
+    <div class="hero-kicker" data-i="kicker">EN ESPAÑOL PRIMERO · FLORIDA</div>
+    <h1 data-i="h1" data-html>Tu licencia de seguros,<br>en <span class="hl">TU idioma.</span></h1>
+    <p class="hero-sub" data-i="hsub">Licencias 2-15, 2-40 y 2-14 más Educación Continua — enseñado en español, respaldado por la escuela privada de seguros más antigua y más grande de Florida.</p>
+    <a class="btn btn-orange" href="#inscribete" data-i="hcta1">Comienza Hoy</a>
+    <a class="btn btn-ghost" href="#programas" data-i="hcta2">Ver Programas</a>
+    <div class="hero-strip">
+      <div><span class="chk">✔</span><span data-i="strip1">Autorizado por el DFS de Florida</span></div>
+      <div><span class="chk">✔</span><span data-i="strip2">Clases en vivo + en línea</span></div>
+      <div><span class="chk">✔</span><span data-i="strip3">Instructores que hablan tu idioma</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="programas">
+  <div class="wrap">
+    <div class="sec-kicker" data-i="pk">Programas</div>
+    <h2 data-i="ph2">El camino a tu carrera empieza aquí</h2>
+    <p class="sec-lead" data-i="plead">Cada programa te prepara para el examen del estado de Florida — con el mismo plan de estudios probado que ha licenciado a miles de agentes, ahora completamente en español.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="code">Licencia 2-15</div>
+        <h3 data-i="c1h">Salud, Vida y Anualidades</h3>
+        <p data-i="c1p">La licencia completa. Vende salud, vida, anualidades y planes Medicare. La puerta de entrada a la carrera con mayor alcance en la industria.</p>
+        <a class="card-cta" href="#inscribete" data-i="c1c">Más información →</a>
+      </div>
+      <div class="card alt1">
+        <div class="code">Licencia 2-40</div>
+        <h3 data-i="c2h">Seguros de Salud</h3>
+        <p data-i="c2p">Solo 40 horas de curso. Enfócate en salud y Medicare — el punto de entrada más rápido para servir a nuestra comunidad durante inscripción abierta.</p>
+        <a class="card-cta" href="#inscribete" data-i="c2c">Más información →</a>
+      </div>
+      <div class="card alt2">
+        <div class="code">Licencia 2-14</div>
+        <h3 data-i="c3h">Vida y Anualidades</h3>
+        <p data-i="c3p">Especialízate en vida y anualidades. Pregunta por nuestras becas patrocinadas por aseguradoras — tu licencia podría costarte nada.</p>
+        <a class="card-cta" href="#inscribete" data-i="c3c">Más información →</a>
+      </div>
+      <div class="card alt3">
+        <div class="code">CE</div>
+        <h3 data-i="c4h">Educación Continua</h3>
+        <p data-i="c4p">Mantén tu licencia activa: Ley y Ética, Idoneidad de Anualidades y más — cursos aprobados por el estado, escritos por quienes conocen el negocio.</p>
+        <a class="card-cta" href="#inscribete" data-i="c4c">Más información →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="como" style="background:var(--light);">
+  <div class="wrap">
+    <div class="sec-kicker" data-i="hk">Cómo Funciona</div>
+    <h2 data-i="hh2">De cero a agente licenciado</h2>
+    <p class="sec-lead" data-i="hlead">Un proceso claro, sin misterios. Te acompañamos en cada paso — antes, durante y después del examen.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="stepnum">1</div>
+        <h4 data-i="s1h">Inscríbete</h4>
+        <p data-i="s1p">Elige tu programa y tu formato: en vivo, Zoom o a tu propio ritmo.</p>
+      </div>
+      <div class="step">
+        <div class="stepnum">2</div>
+        <h4 data-i="s2h">Estudia en español</h4>
+        <p data-i="s2p">Curso completo en tu idioma, con instructores en vivo que responden tus preguntas.</p>
+      </div>
+      <div class="step">
+        <div class="stepnum">3</div>
+        <h4 data-i="s3h">Pasa tu examen</h4>
+        <p data-i="s3p">Preparación dirigida al examen del estado — practica con preguntas reales hasta dominarlo.</p>
+      </div>
+      <div class="step">
+        <div class="stepnum">4</div>
+        <h4 data-i="s4h">Comienza tu carrera</h4>
+        <p data-i="s4p">Al graduarte, conéctate con agencias que están contratando. RSVP con tu instructor para ayudarte a empezar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="porque">
+  <div class="wrap">
+    <div class="sec-kicker" data-i="wk">Por Qué Nosotros</div>
+    <h2 data-i="wh2">No somos nuevos. Somos los primeros en hacerlo en español.</h2>
+    <p class="sec-lead" data-i="wlead">La Escuela De Seguros es la división en español de The Insurance School — el proveedor educativo privado de seguros más antiguo y más grande de Florida.</p>
+    <div class="why-grid">
+      <div class="why-item"><span class="chk">✔</span><p><b data-i="w1b">Trayectoria comprobada.</b> <span data-i="w1p">Décadas licenciando agentes en Florida, con autorización del DFS en todos los tipos de licencia.</span></p></div>
+      <div class="why-item"><span class="chk">✔</span><p><b data-i="w2b">Español primero — no traducido a medias.</b> <span data-i="w2p">Currículo completo desarrollado en español, no un PDF traducido por máquina.</span></p></div>
+      <div class="why-item"><span class="chk">✔</span><p><b data-i="w3b">Instructores en vivo.</b> <span data-i="w3p">Clases con instructores hispanohablantes que trabajan en la industria y conocen tu mercado.</span></p></div>
+      <div class="why-item"><span class="chk">✔</span><p><b data-i="w4b">Camino a empleo.</b> <span data-i="w4p">Nuestros graduados se conectan con agencias asociadas que reclutan directamente de nuestras aulas.</span></p></div>
+      <div class="why-item"><span class="chk">✔</span><p><b data-i="w5b">Becas disponibles.</b> <span data-i="w5p">Becas de licencia patrocinadas por aseguradoras para candidatos calificados — pregunta al inscribirte.</span></p></div>
+      <div class="why-item"><span class="chk">✔</span><p><b data-i="w6b">Más allá de Florida.</b> <span data-i="w6p">Florida es solo el comienzo — nuestra expansión lleva la educación en español a nuevas comunidades.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <span class="star">✻</span>
+  <blockquote data-i="q">"Nuestra comunidad no necesita una traducción. Necesita una escuela."</blockquote>
+  <cite data-i="qc">— La Escuela De Seguros</cite>
+</div>
+
+<section id="formatos">
+  <div class="wrap">
+    <div class="sec-kicker" data-i="fk">Formatos</div>
+    <h2 data-i="fh2">Estudia como te funcione a ti</h2>
+    <p class="sec-lead" data-i="flead">Vida real, horarios reales. Elige el formato que se ajusta a tu trabajo y a tu familia.</p>
+    <table class="formats">
+      <tr><th data-i="ft1">Formato</th><th data-i="ft2">Cómo es</th><th data-i="ft3">Ideal para</th></tr>
+      <tr><td data-i="f1a">Presencial</td><td data-i="f1b">Clases en vivo con tu instructor, en nuestro campus de Kissimmee</td><td data-i="f1c">Quienes aprenden mejor cara a cara</td></tr>
+      <tr><td data-i="f2a">Zoom en vivo</td><td data-i="f2b">La misma clase en vivo, desde tu casa</td><td data-i="f2c">Horarios ocupados, cualquier ciudad</td></tr>
+      <tr><td data-i="f3a">A tu ritmo</td><td data-i="f3b">Plataforma en línea disponible 24/7</td><td data-i="f3c">Autodidactas y turnos nocturnos</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="inscribete" class="cta">
+  <div class="wrap">
+    <h2 data-i="ctah">Tu carrera no va a esperar. Tú tampoco deberías.</h2>
+    <p data-i="ctap">Los cupos de cada clase son limitados. Inscríbete hoy y da el primer paso hacia tu licencia de seguros de Florida — en tu idioma.</p>
+    <a class="btn btn-navy" href="#" id="enroll-btn" data-i="ctab">Inscríbete Ahora</a>
+    <p style="margin-top:18px; font-size:14px; opacity:.85;" data-i="ctan">¿Preguntas? Escríbenos — te respondemos en español o inglés.</p>
+    <p style="margin-top:8px; font-size:14px; opacity:.85;"><span data-i="ctal">Campus:</span> <a href="https://maps.app.goo.gl/JhvTnT4jrDhTsfyt9" target="_blank" rel="noopener" style="color:#fff; font-weight:700; text-decoration:underline;">104 S. Clyde Ave, Kissimmee, FL 34741</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <h5><span style="color:var(--purple);">✻</span> La Escuela De Seguros</h5>
+      <p style="font-size:14px; line-height:1.6;" data-i="fo1">La división en español de The Insurance School — el proveedor educativo privado de seguros más antiguo y más grande de Florida.</p>
+    </div>
+    <div>
+      <h5 data-i="fo2">Programas</h5>
+      <a href="#programas">2-15 · Salud, Vida y Anualidades</a>
+      <a href="#programas">2-40 · Salud</a>
+      <a href="#programas">2-14 · Vida y Anualidades</a>
+      <a href="#programas" data-i="fo3">Educación Continua</a>
+    </div>
+    <div>
+      <h5 data-i="fo4">Enlaces</h5>
+      <a href="https://theinsuranceschool.com" target="_blank" rel="noopener">TheInsuranceSchool.com</a>
+      <a href="#como" data-i="fo5">Cómo Funciona</a>
+      <a href="#inscribete" data-i="fo6">Inscríbete</a>
+    </div>
+    <div>
+      <h5 data-i="fo7">Visítanos</h5>
+      <a href="https://maps.app.goo.gl/JhvTnT4jrDhTsfyt9" target="_blank" rel="noopener" style="line-height:1.6;">104 S. Clyde Ave<br>Kissimmee, FL 34741</a>
+      <a href="https://maps.app.goo.gl/JhvTnT4jrDhTsfyt9" target="_blank" rel="noopener" style="color:var(--orange); font-weight:700;" data-i="fo8">Ver en el mapa →</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span data-i="fb1">© 2026 La Escuela De Seguros · Todos los derechos reservados</span>
+    <span data-i="fb2">Proveedor Educativo Autorizado por el DFS de Florida</span>
+  </div>
+</footer>
+
+<script>
+/* ---------- i18n ---------- */
+const EN = {
+  nav1:"Programs", nav2:"How It Works", nav3:"Why Us", nav4:"Formats", nav5:"Enroll",
+  kicker:"SPANISH FIRST · FLORIDA",
+  h1:'Your insurance license,<br>in <span class="hl">YOUR language.</span>',
+  hsub:"2-15, 2-40 and 2-14 licensing plus Continuing Education — taught in Spanish, backed by Florida's oldest and largest private insurance school.",
+  hcta1:"Start Today", hcta2:"View Programs",
+  strip1:"Florida DFS Authorized", strip2:"Live + online classes", strip3:"Instructors who speak your language",
+  pk:"Programs", ph2:"The road to your career starts here",
+  plead:"Every program prepares you for the Florida state exam — with the same proven curriculum that has licensed thousands of agents, now fully in Spanish.",
+  c1h:"Health, Life & Annuities", c1p:"The full license. Sell health, life, annuities and Medicare plans. The doorway to the career with the widest reach in the industry.", c1c:"Learn more →",
+  c2h:"Health Insurance", c2p:"Just 40 course hours. Focus on health and Medicare — the fastest entry point to serve our community during open enrollment.", c2c:"Learn more →",
+  c3h:"Life & Annuities", c3p:"Specialize in life and annuities. Ask about our carrier-sponsored scholarships — your license could cost you nothing.", c3c:"Learn more →",
+  c4h:"Continuing Education", c4p:"Keep your license active: Law & Ethics, Annuity Suitability and more — state-approved courses written by people who know the business.", c4c:"Learn more →",
+  hk:"How It Works", hh2:"From zero to licensed agent",
+  hlead:"A clear process, no mysteries. We walk with you every step — before, during and after the exam.",
+  s1h:"Enroll", s1p:"Choose your program and your format: in person, Zoom, or self-paced.",
+  s2h:"Study in Spanish", s2p:"Full course in your language, with live instructors who answer your questions.",
+  s3h:"Pass your exam", s3p:"Preparation aimed at the state exam — practice with real questions until you own it.",
+  s4h:"Start your career", s4p:"When you graduate, connect with agencies that are hiring. RSVP with your instructor for help getting started.",
+  wk:"Why Us", wh2:"We're not new. We're the first to do it in Spanish.",
+  wlead:"La Escuela De Seguros is the Spanish division of The Insurance School — Florida's oldest and largest private insurance education provider.",
+  w1b:"Proven track record.", w1p:"Decades licensing agents in Florida, with DFS authorization across all license types.",
+  w2b:"Spanish first — not half-translated.", w2p:"A complete curriculum developed in Spanish, not a machine-translated PDF.",
+  w3b:"Live instructors.", w3p:"Classes with Spanish-speaking instructors who work in the industry and know your market.",
+  w4b:"A path to employment.", w4p:"Our graduates connect with partner agencies that recruit straight from our classrooms.",
+  w5b:"Scholarships available.", w5p:"Carrier-sponsored licensing scholarships for qualified candidates — ask when you enroll.",
+  w6b:"Beyond Florida.", w6p:"Florida is only the beginning — our expansion brings Spanish-language education to new communities.",
+  q:'"Our community doesn\'t need a translation. It needs a school."',
+  qc:"— La Escuela De Seguros",
+  fk:"Formats", fh2:"Study the way that works for you",
+  flead:"Real life, real schedules. Pick the format that fits your work and your family.",
+  ft1:"Format", ft2:"What it's like", ft3:"Best for",
+  f1a:"In person", f1b:"Live classes with your instructor at our Kissimmee campus", f1c:"People who learn best in the room",
+  f2a:"Live Zoom", f2b:"The same live class, from your home", f2c:"Busy schedules, any city",
+  f3a:"Self-paced", f3b:"Online platform available 24/7", f3c:"Self-starters and night shifts",
+  ctah:"Your career won't wait. Neither should you.",
+  ctap:"Seats in every class are limited. Enroll today and take the first step toward your Florida insurance license — in your language.",
+  ctab:"Enroll Now",
+  ctan:"Questions? Write to us — we answer in Spanish or English.",
+  fo1:"The Spanish division of The Insurance School — Florida's oldest and largest private insurance education provider.",
+  fo2:"Programs", fo3:"Continuing Education", fo4:"Links", fo5:"How It Works", fo6:"Enroll",
+  fo7:"Visit Us", fo8:"View on the map →", ctal:"Campus:",
+  fb1:"© 2026 La Escuela De Seguros · All rights reserved",
+  fb2:"Florida DFS Authorized Education Provider"
+};
+const ES = {}; // captured from DOM on load
+
+let lang = "es";
+document.querySelectorAll("[data-i]").forEach(el => { ES[el.getAttribute("data-i")] = el.innerHTML; });
+
+function toggleLang(){
+  lang = (lang === "es") ? "en" : "es";
+  const dict = (lang === "en") ? EN : ES;
+  document.querySelectorAll("[data-i]").forEach(el => {
+    const k = el.getAttribute("data-i");
+    if (dict[k] !== undefined) el.innerHTML = dict[k];
+  });
+  document.documentElement.lang = lang;
+  document.getElementById("es-btn").className = lang === "es" ? "active" : "inactive";
+  document.getElementById("en-btn").className = lang === "en" ? "active" : "inactive";
+}
+
+/* Enrollment → course platform at cursos.laescueladeseguros.com (Kajabi on custom subdomain).
+   Until the subdomain is live, the button shows a clean "opening soon" note. Swap SOON=false at launch. */
+const ENROLL_URL = "https://cursos.laescueladeseguros.com";
+const SOON = true;
+document.getElementById("enroll-btn").addEventListener("click", function(e){
+  if (SOON){
+    e.preventDefault();
+    this.textContent = (lang === "es") ? "¡Muy pronto! Próxima clase por anunciar" : "Coming soon! Next class to be announced";
+    setTimeout(() => { this.textContent = (lang === "es") ? "Inscríbete Ahora" : "Enroll Now"; }, 2600);
+  } else {
+    window.location.href = ENROLL_URL;
+  }
+});
+document.getElementById("enroll-btn").setAttribute("href", ENROLL_URL);
+</script>
+</body>
+</html>
